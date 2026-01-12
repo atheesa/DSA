@@ -1,6 +1,18 @@
 def two_sum_sorted(arr: list[int], target: int) -> list[int]:
-    l,r = 0,0
+    l,r = 0,len(arr) - 1
     
+    localSum = 0
+    # [2, 3, 4, 5, 8, 11, 18]
+    
+    while(l < r):
+        localSum = arr[l] + arr[r]
+        if(localSum) == target:
+            return [l,r]
+        elif(localSum > target):
+            r -= 1
+        else:
+            l += 1 
+        
     
     
     return []
